@@ -14,17 +14,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $clave_propiedad_mod = $_POST['clave_propiedad_mod'] ?? '';
     $propiedad_mod = $_POST['propiedad_mod'] ?? '';
     $valor_mod = $_POST['valor_mod'] ?? '';
+    $clave_propiedad_original = $_GET['clave_propiedad'] ?? '';
 
-    if (!empty($clave_propiedad) && !empty($propiedad) && !empty($valor)) {
-      $sentencia = $pdo->prepare('UPDATE propiedades SET
-        clave = :clave_propiedad_mod,
-        propiedad = :propiedad_mod,
-        valor = :valor_mod
-        WHERE clave = :clave_propiedad_mod OR propiedad = :propiedad_mod OR valor = :valor_mod');
+    if (!empty($clave_propiedad_original) && !empty($propiedad_mod) && !empty($valor_mod)) {
+      $sentencia = $pdo->prepare('UPDATE propiedades 
+      SET propiedad = CASE 
+            WHEN propiedad <> :propiedad_mod THEN :propiedad_mod 
+            ELSE propiedad 
+          END,
+          valor = CASE 
+            WHEN valor <> :valor_mod THEN :valor_mod 
+            ELSE valor 
+          END
+      WHERE clave = :clave_propiedad_original
+      AND (propiedad <> :propiedad_mod OR valor <> :valor_mod)');
 
       $sentencia->bindParam(':clave_propiedad_mod', $clave_propiedad_mod);
       $sentencia->bindParam(':propiedad_mod', $propiedad_mod);
       $sentencia->bindParam(':valor_mod', $valor_mod);
+      $sentencia->bindParam(':clave_propiedad_original', $clave_propiedad_original);
 
       if ($sentencia->execute()) {
         $_SESSION['mensaje'] = "Datos actualizados correctamente.";
@@ -82,7 +90,7 @@ if (isset($_SESSION['mensaje'])) {
   <div class="wrapper">
 
     <!-- Barra de navegación horizontal superior -->
-    <nav class="main-header navbar navbar-expand navbar-dark">
+    <nav class="main-header navbar navbar-expand navbar-dark" style="background-color:#191935 !important; border-color:#191935 !important;">
       <!-- Botones izquierdos (barra de navegación) -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -105,11 +113,13 @@ if (isset($_SESSION['mensaje'])) {
     <!-- /.Barra de navegación -->
 
     <!-- Contenedor Barra Lateral de Búsqueda -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4" >
+    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#191935 !important; border-color:#191935 !important;">
       <!-- Contenedor para logo -->
-      <a class="brand-link">
-        Calculadora 
-      </a>
+      <div class="sidebar">
+        <a class="brand-link" >
+          <img src="../../../public/imagenes/Isotipo en color negativo.png" style="opacity: .8; height: 25px; margin-left: 5px">
+        </a>
+      </div>
 
       <!-- Menú lateral -->
       <div class="sidebar">
@@ -127,6 +137,11 @@ if (isset($_SESSION['mensaje'])) {
               </a>
 
               <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="../../calculadora/calculadora_fotovoltaica.php" class="nav-link">
+                    <p>Calculadora Fotovoltaica</p>
+                  </a>
+                </li>
                 <li class="nav-item">
                   <a href="../consultar_materiales.php" class="nav-link">
                     <p>Consultar Materiales</p>

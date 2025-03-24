@@ -5,13 +5,13 @@ $resultados_propiedades = [];
 
 if (!empty($busqueda)) {
     try {
-        $sql = "SELECT * FROM propiedades WHERE clave LIKE :busqueda OR propiedad LIKE :busqueda OR valor LIKE :busqueda";
+        $sql = "SELECT * FROM propiedades WHERE clave LIKE :busqueda OR propiedad LIKE :busqueda OR valor LIKE :busqueda ORDER BY clave,propiedad ASC";
         $sentencia_busqueda = $pdo->prepare($sql);
         $parametroBusqueda = "%$busqueda%";
         $sentencia_busqueda->bindParam(':busqueda', $parametroBusqueda, PDO::PARAM_STR);
         $sentencia_busqueda->execute();
 
-        $resultados_materiales = $sentencia_busqueda->fetchAll(PDO::FETCH_ASSOC);
+        $resultados_propiedades = $sentencia_busqueda->fetchAll(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }

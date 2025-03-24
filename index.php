@@ -23,7 +23,7 @@
 <div class="wrapper">
 
   <!-- Barra de navegación horizontal superior -->
-  <nav class="main-header navbar navbar-expand navbar-dark">
+  <nav class="main-header navbar navbar-expand navbar-dark" style="background-color:#191935 !important; border-color:#191935 !important;">
     <!-- Botones izquierdos (barra de navegación) -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -46,11 +46,13 @@
   <!-- /.Barra de navegación -->
 
   <!-- Contenedor Barra Lateral de Búsqueda -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4" >
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#191935 !important; border-color:#191935 !important;">
     <!-- Contenedor para logo -->
-    <a class="brand-link">
-      Calculadora 
-    </a>
+    <div class="sidebar">
+      <a class="brand-link" >
+        <img src="public/imagenes/Isotipo en color negativo.png" style="opacity: .8; height: 25px; margin-left: 5px">
+      </a>
+    </div>
 
     <!-- Menú lateral -->
     <div class="sidebar">
@@ -59,7 +61,6 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           
           <!-- Menú de opciones laterales -->
-
           <li class="nav-item">
 
             <!-- Menú de opciones para el catálogo de materiales -->
@@ -71,44 +72,16 @@
             </a>
 
             <ul class="nav nav-treeview">
-
+              <li class="nav-item">
+                <a href="app/calculadora/calculadora_fotovoltaica.php" class="nav-link">
+                  <p>Calculadora Fotovoltaica</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="app/catalogo/consultar_materiales.php" class="nav-link">
                   <p>Consultar Materiales</p>
                 </a>
               </li>
-
-              <!--<li class="nav-item">
-                <a href="#" class="nav-link">
-                  <p>Modificar Registros</p>
-                  <i class="right fas fa-angle-left"></i>
-                </a>
-
-                <ul class="nav nav-treeview">
-
-                  <li class="nav-item">
-                    <a href="app/catalogo/clasificaciones/editar_clasificacion.php" class="nav-link">
-                      <i class="nav-icon fas fa-table"></i>
-                      <p>Clasificación</p>
-                    </a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a href="app/catalogo/materiales/editar_materiales.php" class="nav-link">
-                      <i class="nav-icon fas fa-table"></i>
-                      <p>Materiales</p>
-                    </a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon fas fa-table"></i>
-                      <p>Propiedades</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>-->
-
             </ul>
 
           </li>
@@ -135,50 +108,6 @@
       </div>
     </div>
     <!-- /Encabezado de página -->
-
-    <!-- Contenido principal de la página -->
-    <div class="content">
-      <div class="container-fluid">
-
-        <div class="row">
-          <!-- /Columna izquierda del contenido -->
-          <div class="col-lg-6">
-            
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-                <h5 class="card-title">Titulo</h5>
-
-                <p class="card-text">
-                  Texto ejemplo.
-                </p>
-                <a href="#" class="card-link">Link uno</a>
-                <a href="#" class="card-link">Link dos</a>
-              </div>
-            </div><!-- /Columna izquierda -->
-
-          </div>
-
-          <!-- /Columna derecha del contenido -->
-          <div class="col-lg-6">
-
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="m-0">Titulo negritas</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Titulo</h6>
-
-                <p class="card-text">Texto de ejemplo.</p>
-                <a href="#" class="btn btn-primary">Botón enlace</a>
-              </div>
-            </div>
-          </div>
-          <!-- /Columna derecha del contenido -->
-
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div><!-- /.content -->
-    
   </div><!-- /.content-wrapper -->
   
   <!-- Pie de página -->

@@ -5,7 +5,7 @@ $resultados = [];
 
 if (!empty($busqueda)) {
     try {
-        $sql = "SELECT * FROM clasificacion WHERE clase LIKE :busqueda OR descripcion LIKE :busqueda";
+        $sql = "SELECT * FROM clasificacion WHERE clase LIKE :busqueda OR descripcion LIKE :busqueda ORDER BY clase ASC";
         $sentencia_busqueda = $pdo->prepare($sql);
         $parametroBusqueda = "%$busqueda%";
         $sentencia_busqueda->bindParam(':busqueda', $parametroBusqueda, PDO::PARAM_STR);
@@ -16,6 +16,7 @@ if (!empty($busqueda)) {
         echo "Error: " . $e->getMessage();
     }
 }
+
 // Manejo del formulario si se agregan registros
 $mensaje = "";
 $tipo_mensaje = "";

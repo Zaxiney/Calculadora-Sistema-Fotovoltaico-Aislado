@@ -5,7 +5,7 @@ $resultados_materiales = [];
 
 if (!empty($busqueda)) {
     try {
-        $sql = "SELECT * FROM materiales WHERE clave LIKE :busqueda OR modelo LIKE :busqueda OR marca LIKE :busqueda OR clase LIKE :busqueda";
+        $sql = "SELECT * FROM materiales WHERE clave LIKE :busqueda OR modelo LIKE :busqueda OR marca LIKE :busqueda OR clase LIKE :busqueda ORDER BY clave ASC";
         $sentencia_busqueda = $pdo->prepare($sql);
         $parametroBusqueda = "%$busqueda%";
         $sentencia_busqueda->bindParam(':busqueda', $parametroBusqueda, PDO::PARAM_STR);
@@ -16,6 +16,7 @@ if (!empty($busqueda)) {
         echo "Error: " . $e->getMessage();
     }
 }
+
 // Manejo del formulario si se envían datos
 $mensaje = "";
 $tipo_mensaje = "";

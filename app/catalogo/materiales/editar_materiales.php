@@ -16,8 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $modelo_mod = $_POST['modelo_mod'] ?? '';
       $marca_mod = $_POST['marca_mod'] ?? '';
       $clase_material_mod = $_POST['clase_material_mod'] ?? '';
-
-      // Asegurar que la clave original esté presente
       $clave_original = $_GET['clave_material'] ?? '';
 
       if (!empty($clave_original) && !empty($clave_material_mod) && !empty($modelo_mod) && !empty($marca_mod) && !empty($clase_material_mod)) {
@@ -90,7 +88,7 @@ if (isset($_SESSION['mensaje'])) {
   <div class="wrapper">
 
     <!-- Barra de navegación horizontal superior -->
-    <nav class="main-header navbar navbar-expand navbar-dark">
+    <nav class="main-header navbar navbar-expand navbar-dark" style="background-color:#191935 !important; border-color:#191935 !important;">
       <!-- Botones izquierdos (barra de navegación) -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -113,11 +111,13 @@ if (isset($_SESSION['mensaje'])) {
     <!-- /.Barra de navegación -->
 
     <!-- Contenedor Barra Lateral de Búsqueda -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4" >
+    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#191935 !important; border-color:#191935 !important;">
       <!-- Contenedor para logo -->
-      <a class="brand-link">
-        Calculadora 
-      </a>
+      <div class="sidebar">
+        <a class="brand-link" >
+          <img src="../../../public/imagenes/Isotipo en color negativo.png" style="opacity: .8; height: 25px; margin-left: 5px">
+        </a>
+      </div>
 
       <!-- Menú lateral -->
       <div class="sidebar">
@@ -136,41 +136,16 @@ if (isset($_SESSION['mensaje'])) {
 
               <ul class="nav nav-treeview">
                 <li class="nav-item">
+                  <a href="../../calculadora/calculadora_fotovoltaica.php" class="nav-link">
+                    <p>Calculadora Fotovoltaica</p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a href="../consultar_materiales.php" class="nav-link">
                     <p>Consultar Materiales</p>
                   </a>
                 </li>
 
-                <!--<li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <p>Modificar Registros</p>
-                    <i class="right fas fa-angle-left"></i>
-                  </a>
-
-                  <ul class="nav nav-treeview">
-
-                    <li class="nav-item">
-                      <a href="../clasificaciones/editar_clasificacion.php" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>Clasificación</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="../materiales/editar_materiales.php" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>Materiales</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>Propiedades</p>
-                      </a>
-                    </li>
-                  </ul>
-                </li>-->
               </ul>
 
             </li>  

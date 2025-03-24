@@ -44,7 +44,7 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
   <div class="wrapper">
 
     <!-- Barra de navegación horizontal superior -->
-    <nav class="main-header navbar navbar-expand navbar-dark">
+    <nav class="main-header navbar navbar-expand navbar-dark" style="background-color:#191935 !important; border-color:#191935 !important;">
       <!-- Botones izquierdos (barra de navegación) -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -63,15 +63,16 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
           </a>
         </li>
       </ul>
-    </nav>
-    <!-- /.Barra de navegación -->
+    </nav><!-- /.Barra de navegación -->
 
     <!-- Contenedor Barra Lateral de Búsqueda -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4" >
+    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#191935 !important; border-color:#191935 !important;">
       <!-- Contenedor para logo -->
-      <a class="brand-link">
-        Calculadora 
-      </a>
+      <div class="sidebar">
+        <a class="brand-link" >
+          <img src="../../public/imagenes/Isotipo en color negativo.png" style="opacity: .8; height: 25px; margin-left: 5px">
+        </a>
+      </div>
 
       <!-- Menú lateral -->
       <div class="sidebar">
@@ -91,41 +92,16 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
 
               <ul class="nav nav-treeview">
                 <li class="nav-item">
+                  <a href="../calculadora/calculadora_fotovoltaica.php" class="nav-link">
+                    <p>Calculadora Fotovoltaica</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
                   <a href="consultar_materiales.php" class="nav-link">
                     <p>Consultar Materiales</p>
                   </a>
                 </li>
-
-                <!--<li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <p>Modificar Registros</p>
-                    <i class="right fas fa-angle-left"></i>
-                  </a>
-
-                  <ul class="nav nav-treeview">
-
-                    <li class="nav-item">
-                      <a href="clasificaciones/editar_clasificacion.php" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>Clasificación</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="materiales/editar_materiales.php" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>Materiales</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>Propiedades</p>
-                      </a>
-                    </li>
-                  </ul>
-                </li>-->
               </ul>
 
             </li>  
@@ -147,8 +123,7 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
             </div><!-- /.col -->
           </div>
         </div>
-      </div>
-      <!-- /Encabezado de página -->
+      </div><!-- /Encabezado de página -->
 
       <!-- Contenido principal de la página -->
       <div class="content">
@@ -218,11 +193,12 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
                                 <td>
                                   <div class="row justify-content-end">
                                     <div class="col-3">
-                                      <a href="clasificaciones/editar_clasificacion.php?clase=<?php echo $clase;?>&descripcion=<?php echo $descripcion;?>" class="btn-sm btn-primary btn-block" style="width:auto ; background-color: #0650C6 ; border-color: #0650C6"><i class="fa fa-edit"></i> Editar</a>
+                                      <a href="clasificaciones/editar_clasificacion.php?clase=<?php echo $clase;?>&descripcion=<?php echo $descripcion;?>" class="btn-sm btn-primary btn-block d-flex align-items-center justify-content-center w-100" style="width:auto ; background-color: #0650C6 ; border-color: #0650C6"><i class="fa fa-edit"></i> Editar</a>
                                     </div>
                                     <div class="col-3">
-                                      <a href="clasificaciones/eliminar_clasificacion.php?clase=<?php echo $clase;?>" type="button" class="btn-sm btn-primary btn-block" style="width:auto ; background-color: #191935 ; border-color: #191935" onclick="return confirm('¿Deseas eliminar esta clasificación? Se eliminarán los materiales y propiedades relacionados');"><i class="fas fa-times-circle"></i> Eliminar</a>
+                                      <a href="clasificaciones/eliminar_clasificacion.php?clase=<?php echo $clase;?>" type="button" class="btn-sm btn-primary btn-block d-flex align-items-center justify-content-center w-100" style="width:auto ; background-color: #191935 ; border-color: #191935" onclick="return confirm('¿Deseas eliminar esta clasificación? Se eliminarán los materiales y propiedades relacionados');"><i class="fas fa-times-circle"></i> Eliminar</a>
                                     </div>
+                                    
                                   </div>
                                 </td>
                               </tr>
@@ -245,10 +221,10 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
                                 <td>
                                   <div class="row justify-content-end">
                                     <div class="col-3">
-                                      <a href="clasificaciones/editar_clasificacion.php?clase=<?php echo $clase;?>&descripcion=<?php echo $descripcion;?>" class="btn-sm btn-primary btn-block" style="width:auto ; background-color: #0650C6 ; border-color: #0650C6"><i class="fa fa-edit"></i> Editar</a>
+                                      <a href="clasificaciones/editar_clasificacion.php?clase=<?php echo $clase;?>&descripcion=<?php echo $descripcion;?>" class="btn-sm btn-primary btn-block d-flex align-items-center justify-content-center w-100" style="width:auto ; background-color: #0650C6 ; border-color: #0650C6"><i class="fa fa-edit"></i> Editar</a>
                                     </div>
                                     <div class="col-3">
-                                      <a href="clasificaciones/eliminar_clasificacion.php?clase=<?php echo $clase;?>" type="button" class="btn-sm btn-primary btn-block" style="width:auto ; background-color: #191935 ; border-color: #191935" onclick="return confirm('¿Deseas eliminar esta clasificación? Se eliminarán los materiales y propiedades relacionados');"><i class="fas fa-times-circle"></i> Eliminar</a>
+                                      <a href="clasificaciones/eliminar_clasificacion.php?clase=<?php echo $clase;?>" type="button" class="btn-sm btn-primary btn-block d-flex align-items-center justify-content-center w-100" style="width:auto ; background-color: #191935 ; border-color: #191935" onclick="return confirm('¿Deseas eliminar esta clasificación? Se eliminarán los materiales y propiedades relacionados');"><i class="fas fa-times-circle"></i> Eliminar</a>
                                     </div>
                                   </div>
                                 </td>
@@ -311,11 +287,11 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
 
                                 <td>
                                   <div class="row justify-content-end">
-                                    <div class="col-5">
-                                      <a href="materiales/editar_materiales.php?clave_material=<?php echo $clave_material;?>&modelo=<?php echo $modelo;?>&marca=<?php echo $marca;?>&clase_material=<?php echo $clase_material;?>" class="btn-sm btn-primary btn-block" style="width:auto ; background-color: #0650C6 ; border-color: #0650C6"><i class="fa fa-edit"></i> Editar</a>
+                                    <div class="col-6">
+                                      <a href="materiales/editar_materiales.php?clave_material=<?php echo $clave_material;?>&modelo=<?php echo $modelo;?>&marca=<?php echo $marca;?>&clase_material=<?php echo $clase_material;?>" class="btn-sm btn-primary btn-block d-flex align-items-center justify-content-center w-100" style="width:auto ; background-color: #0650C6 ; border-color: #0650C6"><i class="fa fa-edit"></i> Editar</a>
                                     </div>
-                                    <div class="col-5">
-                                      <a href="materiales/eliminar_materiales.php?clave_material=<?php echo $clave_material;?>" type="button" class="btn-sm btn-primary btn-block" style="width:auto ; background-color: #191935 ; border-color: #191935" onclick="return confirm('¿Deseas eliminar este material? Se eliminarán las propiedades relacionadas');"><i class="fas fa-times-circle"></i> Eliminar</a>
+                                    <div class="col-6">
+                                      <a href="materiales/eliminar_materiales.php?clave_material=<?php echo $clave_material;?>" type="button" class="btn-sm btn-primary btn-block d-flex align-items-center justify-content-center w-100" style="width:auto ; background-color: #191935 ; border-color: #191935" onclick="return confirm('¿Deseas eliminar este material? Se eliminarán las propiedades relacionadas');"><i class="fas fa-times-circle"></i> Eliminar</a>
                                     </div>
                                   </div>
                                 </td>
@@ -323,7 +299,7 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
                               <?php
                             endforeach;
                           } else {
-                            $query = $pdo->prepare(query: 'SELECT * FROM materiales');
+                            $query = $pdo->prepare(query: 'SELECT * FROM materiales ORDER BY clave ASC');
                             $query->execute();
 
                             $materiales = $query->fetchAll(mode: PDO::FETCH_ASSOC);
@@ -342,11 +318,11 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
                                 <td><?php echo $clase_material;?></td>
                                 <td>
                                   <div class="row justify-content-end">
-                                    <div class="col-5">
-                                      <a href="materiales/editar_materiales.php?clave_material=<?php echo $clave_material;?>&modelo=<?php echo $modelo;?>&marca=<?php echo $marca;?>&clase_material=<?php echo $clase_material;?>" class="btn-sm btn-primary btn-block" style="width:auto ; background-color: #0650C6 ; border-color: #0650C6"><i class="fa fa-edit"></i> Editar</a>
+                                    <div class="col-6">
+                                      <a href="materiales/editar_materiales.php?clave_material=<?php echo $clave_material;?>&modelo=<?php echo $modelo;?>&marca=<?php echo $marca;?>&clase_material=<?php echo $clase_material;?>" class="btn-sm btn-primary btn-block d-flex align-items-center justify-content-center w-100" style="width:auto ; background-color: #0650C6 ; border-color: #0650C6"><i class="fa fa-edit"></i>Editar</a>
                                     </div>
-                                    <div class="col-5">
-                                      <a href="materiales/eliminar_materiales.php?clave_material=<?php echo $clave_material;?>" type="button" class="btn-sm btn-primary btn-block" style="width:auto ; background-color: #191935 ; border-color: #191935" onclick="return confirm('¿Deseas eliminar este material? Se eliminarán las propiedades relacionadas');"><i class="fas fa-times-circle"></i> Eliminar</a>
+                                    <div class="col-6">
+                                      <a href="materiales/eliminar_materiales.php?clave_material=<?php echo $clave_material;?>" type="button" class="btn-sm btn-primary btn-block d-flex align-items-center justify-content-center w-100" style="width:auto ; background-color: #191935 ; border-color: #191935" onclick="return confirm('¿Deseas eliminar este material? Se eliminarán las propiedades relacionadas');"><i class="fas fa-times-circle"></i>Eliminar</a>
                                     </div>
                                   </div>
                                 </td>
@@ -381,7 +357,7 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
                     </div>
                   </div>
 
-                  <!-- ENCABEZADO TABLA-->
+                  <!-- INICIO TABLA-->
                   <div class="row ">
                     <table class="table table-hover">
                       <thead>
@@ -408,11 +384,11 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
                                 <td>
                                   <div class="row justify-content-end">
                                     <div class="col-5">
-                                      <a href="propiedades/editar_propiedades.php?clave_propiedad=<?php echo $clave_propiedad;?>&propiedad=<?php echo $propiedad;?>&valor=<?php echo $valor;?>" class="btn-sm btn-primary btn-block" style="width:auto ; background-color: #0650C6 ; border-color: #0650C6"><i class="fa fa-edit"></i> Editar</a>
+                                      <a href="propiedades/editar_propiedades.php?clave_propiedad=<?php echo $clave_propiedad;?>&propiedad=<?php echo $propiedad;?>&valor=<?php echo $valor;?>" class="btn-sm btn-primary btn-block d-flex align-items-center justify-content-center w-100" style="width:auto ; background-color: #0650C6 ; border-color: #0650C6"><i class="fa fa-edit"></i> Editar</a>
                                     </div>
 
                                     <div class="col-5">
-                                      <a href="propiedades/eliminar_propiedades.php?clave_propiedad=<?php echo $clave_propiedad;?>" type="button" class="btn-sm btn-primary btn-block" style="width:auto ; background-color: #191935 ; border-color: #191935" onclick="return confirm('¿Deseas eliminar esta propiedad?');"><i class="fas fa-times-circle"></i> Eliminar</a>
+                                      <a href="propiedades/eliminar_propiedades.php?clave_propiedad=<?php echo $clave_propiedad;?>" type="button" class="btn-sm btn-primary btn-block d-flex align-items-center justify-content-center w-100" style="width:auto ; background-color: #191935 ; border-color: #191935" onclick="return confirm('¿Deseas eliminar esta propiedad?');"><i class="fas fa-times-circle"></i> Eliminar</a>
                                     </div>
                                   </div>
                                 </td>
@@ -420,7 +396,7 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
                               <?php
                             endforeach;
                           } else {
-                            $query = $pdo->prepare(query: 'SELECT * FROM propiedades');
+                            $query = $pdo->prepare(query: 'SELECT * FROM propiedades ORDER BY clave,propiedad ASC');
                             $query->execute();
 
                             $propiedades = $query->fetchAll(mode: PDO::FETCH_ASSOC);
@@ -438,10 +414,10 @@ if (!empty($_GET['busqueda_clasificaciones']) ) {
                                 <td>
                                   <div class="row justify-content-end">
                                     <div class="col-5">
-                                      <a href="propiedades/editar_propiedades.php?clave_propiedad=<?php echo $clave_propiedad;?>&propiedad=<?php echo $propiedad;?>&valor=<?php echo $valor;?>" class="btn-sm btn-primary btn-block" style="width:auto ; background-color: #0650C6 ; border-color: #0650C6"><i class="fa fa-edit"></i> Editar</a>
+                                      <a href="propiedades/editar_propiedades.php?clave_propiedad=<?php echo $clave_propiedad;?>&propiedad=<?php echo $propiedad;?>&valor=<?php echo $valor;?>" class="btn-sm btn-primary btn-block d-flex align-items-center justify-content-center w-100" style="width:auto ; background-color: #0650C6 ; border-color: #0650C6"><i class="fa fa-edit"></i> Editar</a>
                                     </div>
                                     <div class="col-5">
-                                      <a href="propiedades/eliminar_propiedades.php?clave_propiedad=<?php echo $clave_propiedad;?>&propiedad=<?php echo $propiedad;?>" type="button" class="btn-sm btn-primary btn-block" style="width:auto ; background-color: #191935 ; border-color: #191935" onclick="return confirm('¿Deseas eliminar esta propiedad?');"><i class="fas fa-times-circle"></i> Eliminar</a>
+                                      <a href="propiedades/eliminar_propiedades.php?clave_propiedad=<?php echo $clave_propiedad;?>&propiedad=<?php echo $propiedad;?>" type="button" class="btn-sm btn-primary btn-block d-flex align-items-center justify-content-center w-100" style="width:auto ; background-color: #191935 ; border-color: #191935" onclick="return confirm('¿Deseas eliminar esta propiedad?');"><i class="fas fa-times-circle"></i> Eliminar</a>
                                     </div>
                                   </div>
                                 </td>
